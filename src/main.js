@@ -2,18 +2,35 @@ export function createSection1(){
     const section1 = document.getElementById('section1');
     const title = document.createElement('h1')
     const tabs = document.createElement('tabs');
-    const home = document.createElement('div')
-    const menu = document.createElement('div')
-    const contact = document.createElement('div')
+    const homeTab = document.createElement('button')
+    const menuTab = document.createElement('button')
+    const contactTab = document.createElement('button')
+
+    const contentBox = document.createElement('div')
+
     const header = document.createElement('header')
     const footer = document.createElement('footer')
 
+
+    contentBox.classList.add('content-box')   
+
+    contentBox.textContent = 'asdad'
+
+
     title.textContent = 'Restaurant Name'
     title.classList.add('title')
-    home.textContent = 'Home';
-    menu.textContent = 'Menu';
-    contact.textContent = 'Conact';
-    footer.textContent = 'asdsd'
+    homeTab.textContent = 'Home';
+    homeTab.id = 'homeTab'
+    homeTab.classList.add('tab')
+
+    menuTab.textContent = 'Menu';
+    menuTab.id = 'menuTab'
+    menuTab.classList.add('tab')
+
+    contactTab.textContent = 'Conact';
+    contactTab.id = 'contactTab'
+    contactTab.classList.add('tab')
+
     footer.classList.add('footer')
     header.classList.add('header')
     tabs.classList.add('tabs')
@@ -23,9 +40,12 @@ export function createSection1(){
     section1.appendChild(tabs);
     section1.appendChild(title);
 
-    tabs.appendChild(home)
-    tabs.appendChild(menu)
-    tabs.appendChild(contact)
+    section1.appendChild(contentBox)
+
+    tabs.appendChild(homeTab)
+    tabs.appendChild(menuTab)
+    tabs.appendChild(contactTab)
+
 }
 
 export function createSection2() {
@@ -49,6 +69,14 @@ export function createSection2() {
     section2.appendChild(storyContent)
     section2.appendChild(img1)
     section2.appendChild(img2)
+}
+
+
+export function mainPage() {
+    const section1 = document.getElementById('section1');
+    section1.textContent = "";
+    section1.appendChild(createSection1());
+    section1.appendChild(createSection2());
 }
 
    

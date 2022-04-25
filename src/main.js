@@ -11,10 +11,8 @@ export function createSection1(){
     const header = document.createElement('header')
     const footer = document.createElement('footer')
 
-
     contentBox.classList.add('content-box')   
-
-    contentBox.textContent = 'asdad'
+    contentBox.textContent = 'home'
 
 
     title.textContent = 'Restaurant Name'
@@ -22,6 +20,7 @@ export function createSection1(){
     homeTab.textContent = 'Home';
     homeTab.id = 'homeTab'
     homeTab.classList.add('tab')
+    homeTab.classList.add('active')
 
     menuTab.textContent = 'Menu';
     menuTab.id = 'menuTab'
@@ -73,10 +72,9 @@ export function createSection2() {
 
 
 export function mainPage() {
-    const section1 = document.getElementById('section1');
-    section1.textContent = "";
-    section1.appendChild(createSection1());
-    section1.appendChild(createSection2());
+    const contentBox= document.querySelector('.content-box');    
+    contentBox.textContent = "";
+    contentBox.textContent = 'home'
 }
 
    

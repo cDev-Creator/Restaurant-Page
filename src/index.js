@@ -1,10 +1,10 @@
 /* import { createSection1, createSection2  } from "./main" */
-import { menu } from "./menu"
+import { menuPage } from "./menu"
 
-import { mainPage } from "./main";
+import { createSection1, createSection2, mainPage } from "./main";
 
-mainPage();
-
+createSection1()
+createSection2()
 
 const title = document.querySelector('.title');
 
@@ -14,50 +14,46 @@ function removeContent() {
 }
 
 
-const tabs = document.querySelectorAll("tabs");
+const contentBox = document.querySelector('.content-box')
+homeTab.classList.add('active')
+const tabs = document.querySelectorAll(".tab");
 function setActiveTab(tab) {
     tabs.forEach((tab) => {
       if (tab !== this) {
         tab.classList.remove("active");
       }
     });
-
     tab.classList.add("active");
+   
 } 
 
-/* tabs.addEventListener('click', e => {
-    console.log(e.target.id)
+const tabsContainer = document.querySelector(".tabs");
+tabsContainer.addEventListener('click', e => {
     setActiveTab(e.target)
-})  */
+})
+
 
 homeTab.addEventListener('click', e => {
-   console.log('RAT');
-
-   removeContent(); 
-
-   if(e.target.classList.contains("active")) ; 
-   setActiveTab(homeTab)
    title.textContent = 'Restaurant Name'
    section1.style.backgroundImage = "url('bg.jpg')";
-   mainPage()
+   mainPage();
 })
 
 menuTab.addEventListener('click', e => {
     console.log('BAT');
-   
-    removeContent();
-    setActiveTab(menuTab)
-    if(e.target.classList.contains("active")) ; 
     title.textContent = 'Menu'
-    section1.style.backgroundImage = "url('cake.jpg')";
-    menu();
+    section1.style.background = 'grey'
 
-    
+    menuPage()
 })
 
 
 contactTab.addEventListener('click', e => {
+
+    contentBox.textContent = 'content'
     console.log('CAT');
+    title.textContent = 'Contact'
+    section1.style.background = 'red'
 })
 
 

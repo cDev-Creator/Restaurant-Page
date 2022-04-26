@@ -3,8 +3,9 @@ import { menuPage } from "./menu"
 
 import { createSection1, createSection2, mainPage } from "./main";
 
-createSection1()
-createSection2()
+document.onload=createSection1()
+document.onload=createSection2()
+/* section1.style.height = '100vh'; */
 
 const title = document.querySelector('.title');
 
@@ -12,7 +13,6 @@ function removeContent() {
     const contentBox = document.querySelector('.content-box')
     contentBox.textContent = '';
 }
-
 
 const contentBox = document.querySelector('.content-box')
 homeTab.classList.add('active')
@@ -24,7 +24,6 @@ function setActiveTab(tab) {
       }
     });
     tab.classList.add("active");
-   
 } 
 
 const tabsContainer = document.querySelector(".tabs");
@@ -36,24 +35,20 @@ tabsContainer.addEventListener('click', e => {
 homeTab.addEventListener('click', e => {
    title.textContent = 'Restaurant Name'
    section1.style.backgroundImage = "url('bg.jpg')";
+   section1.style.height = '100vh';
    mainPage();
 })
 
 menuTab.addEventListener('click', e => {
-    console.log('BAT');
     title.textContent = 'Menu'
     section1.style.background = 'grey'
-
     menuPage()
 })
 
-
 contactTab.addEventListener('click', e => {
-
     contentBox.textContent = 'content'
-    console.log('CAT');
     title.textContent = 'Contact'
-    section1.style.background = 'red'
+    section1.style.background = 'green'
 })
 
 

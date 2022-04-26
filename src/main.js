@@ -1,3 +1,4 @@
+import { menuPage } from "./menu"
 export function createSection1(){
     const section1 = document.getElementById('section1');
     const title = document.createElement('h1')
@@ -7,44 +8,52 @@ export function createSection1(){
     const contactTab = document.createElement('button')
 
     const contentBox = document.createElement('div')
+    const message = document.createElement('p')
+    const orderBtn = document.createElement('button')
 
     const header = document.createElement('header')
     const footer = document.createElement('footer')
-
-    contentBox.classList.add('content-box')   
-    contentBox.textContent = 'home'
-
-
+    
     title.textContent = 'Restaurant Name'
     title.classList.add('title')
     homeTab.textContent = 'Home';
     homeTab.id = 'homeTab'
     homeTab.classList.add('tab')
     homeTab.classList.add('active')
-
     menuTab.textContent = 'Menu';
     menuTab.id = 'menuTab'
     menuTab.classList.add('tab')
-
     contactTab.textContent = 'Conact';
     contactTab.id = 'contactTab'
     contactTab.classList.add('tab')
-
     footer.classList.add('footer')
     header.classList.add('header')
     tabs.classList.add('tabs')
+     
+    contentBox.classList.add('content-box')  
+    message.textContent = 'Baked Fresh, Daily'
+    message.classList.add('message')
 
+    orderBtn.textContent = "Order Now"
+    orderBtn.classList.add('orderBtn')
+    orderBtn.addEventListener('click', e => {
+        title.textContent = 'Menu'
+        section1.style.background = 'grey'
+        menuPage()
+    })
+
+    contentBox.appendChild(message)
+    contentBox.appendChild(orderBtn)
+    
     section1.appendChild(footer)
     section1.appendChild(header)
     section1.appendChild(tabs);
     section1.appendChild(title);
 
     section1.appendChild(contentBox)
-
     tabs.appendChild(homeTab)
     tabs.appendChild(menuTab)
     tabs.appendChild(contactTab)
-
 }
 
 export function createSection2() {
@@ -72,44 +81,25 @@ export function createSection2() {
 
 
 export function mainPage() {
-    const contentBox= document.querySelector('.content-box');    
-    contentBox.textContent = "";
-    contentBox.textContent = 'home'
+    const contentBox= document.querySelector('.content-box')    
+    contentBox.textContent = ''
+    const message = document.createElement('p')
+    message.textContent = 'Baked Fresh, Daily'
+    message.classList.add('message')
+    contentBox.appendChild(message)
+
+    const orderBtn = document.createElement('button')
+    orderBtn.textContent = "Order Now"
+    orderBtn.classList.add('orderBtn')
+
+
+    // GO BACK AND MAKE MENU TAB ACTIVE WHEN ORDER NOW SLECETED
+    const title = document.querySelector('.title');
+    orderBtn.addEventListener('click', e => {
+        title.textContent = 'Menu'
+        section1.style.background = 'grey'
+        menuPage()
+    })
+
+    contentBox.appendChild(orderBtn)
 }
-
-   
-
-
-
-  
-
-
-
-/* const p = document.createElement('p')
-window.addEventListener('DOMContentLoaded', setup); 
-
-function setup() {
-    const options = {
-        rootMargin: '0px 0px -200px 0px'
-    }
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target);
-            } else {
-                return;
-            }
-        })
-    }, options);
-
-    const h1 = document.querySelector('h1');
-    observer.observe(h1);
-    observer.observe(p);
-
-
-
-    const paras = document.querySelectorAll('p');
-    paras.forEach(p => observer.observe(p));
-} */

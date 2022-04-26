@@ -14,7 +14,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
-    height: 100vh;
 }
 
 
@@ -32,22 +31,17 @@ body {
     padding: 30px 0px;
 }
 
-.active {
-    color:green;
+button.active.tab {
+    color:rgb(255, 194, 241);
 }
 
-button {
+button.tab {
     background: none;
     border: none;
     color: var(--main-color);
     font-size: 1.5rem;
     outline: none;
     cursor: pointer;
-}
-
-.tabs > div:hover {
-    transition: ease all .5s;
-    color: rgb(79, 79, 79);
 }
 
 .header {
@@ -63,7 +57,25 @@ button {
     align-items: center;
 }
 
+.message {
+    font-size: 100px;
+    margin-top: 600px;
+    margin-bottom: 60px;;
+}
 
+.orderBtn {
+    border: none;
+    background: var(--main-color);
+    width: 180px;
+    height: 80px;
+    font-size: 1.8rem;
+    border-radius: 100px;
+    outline: none;
+}
+
+.orderBtn:hover {
+    cursor: pointer;
+}
 
 .footer {
     background-color: var(--main-color);
@@ -80,10 +92,8 @@ h1 {
 }
 
 
-
-
 #section2 {
-    background: rgb(44, 33, 33);
+    background:#5a4e69;
     padding:10px;
     margin:0px;
     display: grid;
@@ -100,7 +110,7 @@ h1 {
    align-items: center;
    font-size: 4rem;
    text-decoration: underline;
-   margin-top: 300px;
+   margin-top: 200px;
    margin-bottom: 0px;
 }
 
@@ -111,9 +121,9 @@ h1 {
     grid-column: 2 / 2;
     font-size: 1.5rem;
     height: 300px;
-    width: clamp(350px, 50vw, 550px); 
+    margin-top: -80px;
+    width: clamp(450px, 50vw, 750px); 
 }
-
 
 .img1, .img2 {
     margin-left: auto;
@@ -134,7 +144,17 @@ h1 {
 }
 
 .dish-wrapper {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    border-bottom: 1px solid rgb(0, 0, 0);
+    width: 400px;
+}
+
+.dish-title {
+    white-space: nowrap;
+}
+
+.price {
+    text-decoration: underline;
 }
 

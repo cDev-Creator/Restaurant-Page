@@ -1,26 +1,31 @@
 :root {
-    --main-color:rgb(255, 233, 233);
+    --main-color:rgba(141, 129, 140, 0.856);
+    --accent-color:rgb(254, 220, 220);
 }
 body {
    color: var(--main-color);
+   background-color: var(--accent-color);
    height: 100%;
    margin: 0;
    padding: 0;
 }
 
 #section1 {
-    background-image: url("bg.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+    /* background-image: url(bg.jpg); */
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
     width: 100%;
+    min-height: 100vh;
 }
-
 
 .title {
     display: flex;
     justify-content: center;
     font-size: 4.5rem;
+    margin-bottom:100px;
 }
 
 .tabs {
@@ -31,12 +36,17 @@ body {
     padding: 30px 0px;
 }
 
+
 button.active.tab {
-    color:rgb(255, 194, 241);
+    background: var(--main-color);
+    color: var(--accent-color);
 }
 
 button.tab {
-    background: none;
+    /* background: var(--main-color); */
+    background: transparent;
+    border-radius: 30px;
+    padding:10px;
     border: none;
     color: var(--main-color);
     font-size: 1.5rem;
@@ -51,16 +61,43 @@ button.tab {
     height: .8vh;
 }
 
+.footer {
+    background-color: var(--main-color);
+    bottom: 0%;
+    position: fixed;
+    width: 100vw;
+    height: .8vh;
+}
+
 .content-box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.content-box.dish-box {
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    color: var(--accent-color);
+    background-color: var(--main-color);
+    border: 5px var(--accent-color) dashed;
+    border-radius: 50px;
+    margin: 10px auto;
+    text-align: center;
+    max-width: 1500px;
+    min-width: 200px;
+    margin-bottom: 100px;
+}
+
 .message {
     font-size: 100px;
-    margin-top: 600px;
+    margin-top: 80px;
     margin-bottom: 60px;;
+}
+
+.food-img {
+    width: 500px;
 }
 
 .orderBtn {
@@ -77,13 +114,6 @@ button.tab {
     cursor: pointer;
 }
 
-.footer {
-    background-color: var(--main-color);
-    bottom: 0%;
-    position: fixed;
-    width: 100vw;
-    height: .8vh;
-}
 
 h1 {
     position: relative;
@@ -144,17 +174,44 @@ h1 {
 }
 
 .dish-wrapper {
-    display: flex;
-    flex-direction: column;
+    flex-direction:column;
     text-align: center;
-    width: 400px;
+    width: 100px;
+    flex: 40%;
+    text-align: center;
+    padding: 10px 50px;
+    font-size: 1.2rem;
 }
 
 .dish-title {
     white-space: nowrap;
+    text-decoration: underline;
+    font-size: 2rem;
 }
 
 .price {
-    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+.menu-img1, .menu-img2 {
+    width: 200px;
+}
+
+.menu-img1 {
+    display: flex;
+    padding-right: 250px;
+    padding-left: 270px;
+}
+
+/* Contact */
+
+.heading {
+    font-size: 2rem;
+}
+
+.map {
+    width: 800px;
+    height: 500px;
+    outline: none;
 }
 

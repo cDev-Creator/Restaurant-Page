@@ -1,9 +1,9 @@
 
 export function menuPage() {
     const contentBox = document.querySelector('.content-box')
-
     contentBox.textContent = ''
     menuList()
+   
 }
 
 function menuList() {
@@ -16,7 +16,6 @@ function menuList() {
     createDish('Spiced Apple Bread Pudding',15,'Cinnamon spiced apple-walnut bread baked in custard, warm toffee sauce, vanilla ice cream');
     createDish('Chocolate Peanut Butter Truffle', 18, 'Peanut butter cream, caramel milk chocolate mousse, peanut butter crunch, oreo brownie, served with banana caramel ice cream')
     createDish('Framboise Macadamia Decadence',27, 'Dense, creamy, smooth chocolate creation baked in a macadamia nut crust, chocolate raspberry cream, fresh raspberries')
-
     createDish('The Roasted Pineapple', 17,'Warm pineapple upside down cake, vanilla ice cream, roasted pineapple - rum caramel sauce')
 
 }

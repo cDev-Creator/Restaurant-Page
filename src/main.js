@@ -37,10 +37,9 @@ export function createSection1(){
     orderBtn.textContent = "Order Now"
     orderBtn.classList.add('orderBtn')
     orderBtn.addEventListener('click', e => {
-        title.textContent = 'Menu'
-        section1.style.background = 'grey'
-        menuPage()
+
     })
+
 
     contentBox.appendChild(message)
     contentBox.appendChild(orderBtn)
@@ -49,7 +48,6 @@ export function createSection1(){
     section1.appendChild(header)
     section1.appendChild(tabs);
     section1.appendChild(title);
-
     section1.appendChild(contentBox)
     tabs.appendChild(homeTab)
     tabs.appendChild(menuTab)
@@ -81,13 +79,21 @@ export function createSection2() {
 
 
 export function mainPage() {
-    const contentBox= document.querySelector('.content-box')    
+    const contentBox= document.querySelector('.content-box')   
+   
     contentBox.textContent = ''
+
+    const img = document.createElement('img')
+    img.setAttribute('src', 'cup.png')
+    img.classList.add('food-img')
+    contentBox.appendChild(img)
+    
+    
     const message = document.createElement('p')
     message.textContent = 'Baked Fresh, Daily'
     message.classList.add('message')
     contentBox.appendChild(message)
-
+    
     const orderBtn = document.createElement('button')
     orderBtn.textContent = "Order Now"
     orderBtn.classList.add('orderBtn')
@@ -96,9 +102,7 @@ export function mainPage() {
     // GO BACK AND MAKE MENU TAB ACTIVE WHEN ORDER NOW SLECETED
     const title = document.querySelector('.title');
     orderBtn.addEventListener('click', e => {
-        title.textContent = 'Menu'
-        section1.style.background = 'grey'
-        menuPage()
+       
     })
 
     contentBox.appendChild(orderBtn)

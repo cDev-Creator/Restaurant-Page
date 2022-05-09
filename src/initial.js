@@ -1,15 +1,18 @@
 import { menuPage } from "./menu"
 
-import { createSection1, createSection2, mainPage } from "./main";
+import { createSection1, createSection2, createSection3, mainPage } from "./main";
 import { contactPage } from "./contact";
+
 
 createSection1()
 createSection2()
+createSection3()
 mainPage()
 
 /* export function initialPage() {
 
 } */
+
 
 
 

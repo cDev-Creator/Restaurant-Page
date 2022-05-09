@@ -1,4 +1,4 @@
-import { initialPage } from "./initial"
-initialPage();
+/* import { initialPage } from "./initial"
+initialPage(); */
 
 

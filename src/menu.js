@@ -39,7 +39,6 @@ function createDish(dishname, price, description) {
     dishTitle.textContent = dishname;
     dishDescription.textContent = description;
     dishPrice.textContent = `${price}`;
-
 }
 
 

@@ -40,10 +40,8 @@ export function createSection1(){
 
     })
 
-
     contentBox.appendChild(message)
     contentBox.appendChild(orderBtn)
-    
     section1.appendChild(footer)
     section1.appendChild(header)
     section1.appendChild(tabs);
@@ -76,6 +74,17 @@ export function createSection2() {
     section2.appendChild(img1)
     section2.appendChild(img2)
 }
+
+export function createSection3() {
+    const story = document.createElement('h2')
+    const section3 = document.getElementById('section3');
+
+    story.textContent = 'meow'
+  
+    section3.appendChild(story)
+ 
+}
+
 
 
 export function mainPage() {
